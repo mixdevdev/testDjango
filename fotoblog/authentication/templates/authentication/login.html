@@ -7,11 +7,16 @@
     <title>test</title>
 </head>
 <body>
-    {{message}}
-    <form method="post">
-        {% csrf_token %}
-        {{form}}
-        <button type="submit">Validate</button>
-    </form>
+        <form method="post">
+            {% csrf_token %}
+            {{form}}
+    {% comment %} {% if user.authenticated%} {% endcomment %}
+            <button type="submit">Validate</button>
+        </form>
+        {{message}}
+        <a href="{% url 'logout'%}">
+            Logout
+        </a>
+    {% comment %} {%endif%} {% endcomment %}
 </body>
 </html>
