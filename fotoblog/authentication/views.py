@@ -16,7 +16,7 @@ def login_page(request):
             )
         if user is not None:
             login(request,user)
-            message=f'Please come in {form.username}'
+            message=f'Please come in '
         else:
             message='No Way'
     return render(request,'authentication/login.html',context={'form': form, 'message': message})
